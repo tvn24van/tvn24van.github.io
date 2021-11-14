@@ -1,0 +1,125 @@
+:root{
+    --bgColor: rgba(255, 255, 255, 0.541);
+    scroll-behavior: smooth;
+}
+::selection{
+    background: black;
+    color: white;
+}
+@font-face {
+    font-family: "Zilla Slab";
+    src: url("../font/ZillaSlab-Regular.ttf");
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url("../img/cloth.png");
+    font-family: 'Zilla Slab', serif;
+}
+
+ul{
+    z-index: 999;
+    list-style: none;
+    user-select: none;
+    margin-top: 0;
+    padding-left: 0;
+    position: fixed;
+    height: 1.1rem;
+    top: 0;
+    right: 0;
+}
+
+li{
+    background: var(--bgColor);
+    float: left;
+    position: relative;
+    text-decoration: none;
+    transition: step-end .3s;
+}
+
+li a{
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: black;
+}
+
+li:hover{
+    background: black;
+    cursor: pointer;
+    transition: ease-out .5s;
+}
+li:hover a{
+    color: white;
+}
+
+nav a::before{
+    content: "♜";
+    color: white;
+    visibility: hidden;
+}
+nav a:hover::before{
+    content: "♜";
+    visibility: visible;
+}
+ul li ul{
+    color:black;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 6rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 2rem;
+    right: 0;
+    top: 1.3rem;
+    display: none;
+}
+.dropdown li a{
+    color: black;
+}
+.dropdown li:hover a{
+    color: white;
+}
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+ul li ul li{
+    clear: both;
+    width: 100%;
+}
+.disabledLink{
+    pointer-events: none;
+}
+main{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+h1{
+    text-decoration: dashed underline;
+    font-size: 1.5rem;
+    font-weight: bold;
+    user-select: none;
+}
+article{
+    z-index: 998;
+    flex: 1;
+    margin: 15vh;
+    background: var(--bgColor);
+    padding: 1rem;
+    min-width: 10%;
+}
+article h1::before{
+    content: "♟";
+}
+
+footer{
+    text-align: center;
+    padding: 2rem;
+    background: var(--bgColor);
+}

@@ -1,0 +1,36 @@
+
+@keyframes boardFlipAnimation{
+    from{
+        transform: translate(-150%, -120%) skew(40deg, 30deg) rotate(-100deg);
+        -webkit-box-shadow: 34px 34px 50px 20px rgba(66, 68, 90, 1);
+        -moz-box-shadow: 34px 34px 50px 20px rgba(66, 68, 90, 1);
+        box-shadow: 34px 34px 50px 20px rgba(66, 68, 90, 1);
+    }
+    to{
+        transform: translate(0,0) skew(0, 0) rotate(2deg);
+    }
+}
+
+table{
+    border:5px dashed black;
+    padding: 1.5px;
+    margin-left: 4rem;
+    margin-top: 4rem;
+    color: lightgray;
+    user-select: none;
+    transform: rotate(2deg);
+    animation: boardFlipAnimation 2s ease-out;
+}
+tr{
+    padding: 0;
+    margin: 0;
+}
+td{
+    padding: 2px;
+    margin: 0;
+    width: 4rem;
+    height: 4rem;
+    border: .7px solid black;
+    text-align: end;
+    vertical-align:bottom;
+}
