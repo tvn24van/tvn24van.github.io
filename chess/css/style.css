@@ -16,7 +16,7 @@
         background-image: url("../img/cloth.jpg");
     }
     footer a img{
-        content:url("https://jigsaw.w3.org/css-validator/images/vcss-blue");
+        content:url("../img/valid-css-blue-v.svg");
     }
 }
 
