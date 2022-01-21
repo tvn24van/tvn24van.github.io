@@ -34,3 +34,13 @@ td{
     text-align: end;
     vertical-align:bottom;
 }
+
+table tr:nth-child(even) > td:nth-child(odd),
+table tr:nth-child(odd) td:nth-child(even){
+    background: #3C3D3B;
+}
+table tr:nth-child(odd) > td:nth-child(odd),
+table tr:nth-child(even) td:nth-child(even){
+    background: white;
+    color: gray;
+}

@@ -1,5 +1,5 @@
 :root{
-    --bgColor: rgba(255, 255, 255, 0.541);
+    --bgColor: rgba(255, 255, 255, 0.767);
     scroll-behavior: smooth;
 }
 ::selection{
@@ -8,12 +8,21 @@
 }
 @font-face {
     font-family: "Zilla Slab";
-    src: url("../font/ZillaSlab-Regular.ttf");
+    src: url("../font/ZillaSlab-Regular.woff2");
+    font-display: swap;
 }
+@media only screen{
+    body{
+        background-image: url("../img/cloth.jpg");
+    }
+    footer a img{
+        content:url("https://jigsaw.w3.org/css-validator/images/vcss-blue");
+    }
+}
+
 body{
     padding: 0;
     margin: 0;
-    background-image: url("../img/cloth.png");
     font-family: 'Zilla Slab', serif;
 }
 

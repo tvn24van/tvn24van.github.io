@@ -1,13 +1,15 @@
 /**
  * Tworzenie tabelki na szachy
  */
-document.addEventListener("DOMContentLoaded", function(event) {
-    const body = document.body,
-    table = document.getElementsByTagName('table')[0];
 
-    let tilesCount = 64;
-    const boardSize = 8;
-    const alphabet = ["H","G","F","E","D","C","B","A"]; 
+/**
+ * @param table which is used to create chcess board 
+ */
+function createChessBoard(table){
+    const alphabet = ['H','G','F','E','D','C','B','A'],
+    boardSize = 8;
+
+    let tilesCount = boardSize^2;
 
     table.cellSpacing=0;
 
@@ -16,18 +18,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         for(let tdCount = boardSize; tdCount>0;){
             const td = tr.insertCell();
-            const conditionOne = trCount%2 == 0,
-            conditionTwo = tilesCount%2 == 0;
 
             td.textContent = alphabet[tdCount-1] + trCount;
-            td.className="komorka";
-            
-            if( (!conditionOne && conditionTwo) || (conditionOne && !conditionTwo) ){
-                td.style.backgroundColor="#3C3D3B";
-            }else{
-                td.style.background="white";
-                td.style.color="gray";
-            }
+            td.className = "komorka";
 
             tilesCount--;
             tdCount--;
@@ -35,7 +28,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         trCount--;
     }
+}
 
-    console.log("Zakończono tworzenie tabelki");
+document.addEventListener("DOMContentLoaded", async function() {
+    const debug = false,
+    main = document.getElementsByTagName("main")[0];
+
+    if(debug)
+        for(let i=1; i<100; i++)
+            main.appendChild(document.createElement('table'));
+
+    const tables = document.getElementsByTagName('table'),
+    startTime = new Date().getTime();
+
+    for(const table of tables)
+        createChessBoard(table);
+
+    const executionTime = new Date().getTime() - startTime;
+    console.log("Zakończono tworzenie "+tables.length +" szachownic/y w czasie "+executionTime+" ms");
 });
+
+
  
