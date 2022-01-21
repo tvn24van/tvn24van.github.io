@@ -132,3 +132,8 @@ footer{
     padding: 2rem;
     background: var(--bgColor);
 }
+footer a img{
+    display: inline-block;
+    width: 16%;
+    height: 10%;
+}
